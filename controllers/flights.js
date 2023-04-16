@@ -22,7 +22,22 @@ function create(req, res){
 function index(req, res){
   console.log('index working')
   res.render('flights/index', {
-    title: 'All Flights'
+    title: 'All Flights',
+    flight: flight
+  })
+}
+
+function show(req, res){
+  Flight.findById(req.params.flightId)
+  .then(flight => {
+    res.render('flights/show', {
+      title: 'Flight Details',
+      flight: flight,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
   })
 }
 
@@ -30,4 +45,5 @@ export {
   newFlight as new,
   create,
   index,
+  show,
 }
