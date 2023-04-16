@@ -3,14 +3,14 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Movie List</h1>
+  <h1>Flight List</h1>
   <table id="list">
     <thead>
       <tr>
         <th>Airline</th>
         <th>Airport</th>
-        <th></th>
-        <th></th>
+        <th>Details</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -18,8 +18,15 @@
         <tr>
           <td><%= flight.airline %></td>
           <td><%= flight.airport %></td>
-          <td><a href="/flights/<%= flight._id %>"></a></td>
-          <td></td>
+          <td><a href="/flights/<%= flight._id %>">view</a></td>
+          <td>
+            <form 
+              action="/flights/<%= flight._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit">X</button>
+            </form>
+          </td>
         </tr>
       <% }) %>
     </tbody>
