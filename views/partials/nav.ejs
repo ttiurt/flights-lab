@@ -1,10 +1,15 @@
 </head>
 <body>
   <nav>
-		<i class="fa-light fa-plane-tail" style="color: #545454;"></i>
+		<i class="fa-solid fa-plane-engines"></i>
     <a 
       href="/flights/new" class=<%= title === 'Add Flight' ? 'active' : '' %>
     >
       ADD FLIGHT
+    </a>
+    <a 
+      href="/flights/index" class=<%= title === 'All Flights' ? 'active' : '' %>
+    >
+      ALL FLIGHTS
     </a>
   </nav>
