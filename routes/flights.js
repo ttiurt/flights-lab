@@ -11,6 +11,10 @@ router.get('/index', flightsCtrl.index)
 
 router.get('/:flightId', flightsCtrl.show)
 
+router.post('/:flightId/tickets', flightsCtrl.addTicket)
+
+router.post('/:flightId/meals', flightsCtrl.addToMeals)
+
 router.delete('/:flightId', flightsCtrl.delete)
 
 router.get('/:flightId/edit', flightsCtrl.edit)
